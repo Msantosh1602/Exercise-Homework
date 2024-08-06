@@ -1,6 +1,7 @@
 final class CurrentAccount extends Account{
     private static final double MINIMUM_BALANCE =1000;
     public CurrentAccount(String accountNo, String name, double amount) {
+
         super(accountNo, name, amount);
     }
 
