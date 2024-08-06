@@ -3,6 +3,7 @@ final class SBAccount extends Account{
     private static final double INTEREST_RATE= 0.04;
 
     public SBAccount(String accountNo, String name, double amount) {
+
         super(accountNo, name, amount);
     }
     @Override
@@ -21,6 +22,7 @@ final class SBAccount extends Account{
     }
 
     public void addMonthlyInterest(){
-        this.amount=this.amount * INTEREST_RATE;
+        this.amount+=this.amount * INTEREST_RATE;
+        System.out.println("Monthly interest added. New Balance is: "+this.amount);
     }
 }

@@ -23,15 +23,20 @@ public class Main {
         }
         if(acc!=null){
             System.out.println("Account created successfully");
-            System.out.println("Enter action (1 for deposit, 2 for withdraw): ");
+            System.out.println("Enter action (1 for deposit, 2 for withdraw  and 3 to check monthly interest): ");
             int action = sc.nextInt();
-            System.out.println("Enter Amount: ");
-            double transferAmount = sc.nextDouble();
+
             if (action==1){
+                System.out.println("Enter Amount: ");
+                double transferAmount = sc.nextDouble();
                 acc.deposit(transferAmount);
             } else if (action==2) {
+                System.out.println("Enter Amount: ");
+                double transferAmount = sc.nextDouble();
                 acc.withdraw(transferAmount);
-            }else {
+            } else if (action==3 && acc instanceof SBAccount) {
+                ((SBAccount) acc).addMonthlyInterest();
+            } else {
                 System.out.println("Invalid action selection");
             }
         }else {
